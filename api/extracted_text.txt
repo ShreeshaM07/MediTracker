@@ -1,0 +1,9 @@
+In this code, the *ImageTextExtraction* widget allows users to select an image from the
+gallery and then call the “extractText™ function to send the image to the Flask API
+endpoint. Replace *'YOUR_FLASK_API_ENDPOINT' © with the actual endpoint where your
+
+Flask server is hosted.
+
+On the Flask server side, you need to handle the image and perform text extraction. Here's a
+
+basic example of a Flask server:
