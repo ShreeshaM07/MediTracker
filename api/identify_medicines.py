@@ -8,7 +8,7 @@ def findFollowUpDate(extracted_text):
     return follow_up_date
 
 # Example usage
-extracted_text = "Hospital Name\n\nAFHJVN;BFOP;BGP;NGLJDFGLS;\n\nPhn:2389u4y0\n\nPatient Namezwipgths\nAge:s8\n\nSexson\n\nInvestigations: xray,dghibif\nDiagnosixifizhul\n\nMedication:\n\nMedicine name Dosage Duration\n\nTab, ibuprofen \u20181 morning, 1 night (Before food)\n\nCap, ome, 1. morning , 1 night (before food)\n\nOintment Volini afternoon (after food)\n\nAdvice: take medicines on time\n\nFollow up: 12/01/22\n\n3 days\n3 days\n\n2 days\n"
+#extracted_text = "Hospital Name\n\nAFHJVN;BFOP;BGP;NGLJDFGLS;\n\nPhn:2389u4y0\n\nPatient Namezwipgths\nAge:s8\n\nSexson\n\nInvestigations: xray,dghibif\nDiagnosixifizhul\n\nMedication:\n\nMedicine name Dosage Duration\n\nTab, ibuprofen \u20181 morning, 1 night (Before food) 3 days\nCap, omez, 1 morning , 1 night (before food) 3 days\nOintment, Volini afternoon (after food) 2 days\n\nAdvice: take medicines on time\n\nFollow up: 12/01/22\n\n\n\n\n\n"
 
 
 def extractTablets(extracted_text):
@@ -17,7 +17,7 @@ def extractTablets(extracted_text):
     #print(sentences)
     line_no=None
     for i in range(len(sentences)):
-        if 'Medicine name Dosage Duration' in sentences[i]:
+        if 'Medicine name Dosage' in sentences[i]:
             line_no=i
             break
     tablets_arr=[]
@@ -31,12 +31,13 @@ def extractTablets(extracted_text):
         
 
     #print(tablets_arr)
-    #taab_list is the final list that will be sent back to the flutter
+    #tab_list is the final list that will be sent back to the flutter
     tab_list=[]
     for i in range(len(tablets_arr)):
         tab_sentence=[]
         try:
             word_in_line=list(tablets_arr[i].split())
+            #print(word_in_line)
             if(word_in_line[0]=='Tab,' or word_in_line[0]=='Cap,' or word_in_line[0]=='Ointment,' ):
                 word_in_line[0]+=word_in_line[1]
                 #print(word_in_line)
@@ -64,7 +65,8 @@ def extractTablets(extracted_text):
                 break
             
         except Exception :
-            break
+            continue
+            
         #print(tab_sentence)
         tab_list.append(tab_sentence)
     follow_up_date = findFollowUpDate(extracted_text)
@@ -73,14 +75,47 @@ def extractTablets(extracted_text):
     
     tab_list.append(['Follow up date',follow_up_date])
     print(tab_list)
+    return tab_list
     
-    
+def extract_Tablets(extracted_text):
+    sentences=list(extracted_text.split('\n'))
+    #print(sentences)
+    tablets_list=[]
+    for i in range(len(sentences)):
+        try:
+            word_in_sentence=list(sentences[i].split())
+            #print(word_in_sentence)
+            if word_in_sentence[0]=='Tab,' or word_in_sentence[0]=='Cap,' or word_in_sentence[0]=='Ointment,' :
+                tablets_list.append([sentences[i]])
 
+        except Exception:
+            continue
+    follow_up_date = findFollowUpDate(extracted_text)
+    for i in range(len(tablets_list)):
+        if 'morning' in tablets_list[i][0] or 'Morning' in tablets_list[i][0]:
+            tablets_list[i].append('morning')
+        if 'afternoon' in tablets_list[i][0] or 'Afternoon' in tablets_list[i][0]:
+            tablets_list[i].append('afternoon')
+        if 'evening' in tablets_list[i][0] or 'Evening' in tablets_list[i][0]:
+            tablets_list[i].append('evening')
+        if 'night' in tablets_list[i][0] or 'Night' in tablets_list[i][0]:
+            tablets_list[i].append('night')
+        if 'before' in tablets_list[i][0] or 'Before' in tablets_list[i][0]:
+            tablets_list[i].append('before')
+        else:
+            tablets_list[i].append('after')
+        
+    tablets_list.append(['Follow up date',follow_up_date])
+    print("Follow-up Date:", follow_up_date)
+    print(tablets_list)
+    return tablets_list
         
     
 
 
     
      
-extractTablets(extracted_text)
+# extractTablets(extracted_text)
 
+# extracted_text="Hospital Name |\n\nAFHJVN;BFOP;BGP;NGLIDFGLS;\n\nPhn:2389u4y0\n\nPatient Name:ruipgthg\nAge:88\nsexim\nInvestigations: xray,dghibif\n\nDiagnosis:ifjighuj\n\nMedication:\n\nMedicine name Dosage\n\nDuration\nTab, ibuprofen \u20181 morning, 1 night (Before food) 3 days\nCap, omez \u2018L morning , 1 night (before food) 3 days\nOintment, Volini afternoon (after food) 2 days\n\nAdvice: take medicines on time\n\nFollow up: 12/01/22\n\nDname\n\njfapbgliabg\n"
+# extract_Tablets(extracted_text)

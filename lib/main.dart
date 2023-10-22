@@ -5,6 +5,7 @@ import 'login_page.dart';
 import 'dart:io';
 // import 'package:image_picker/image_picker.dart';
 import 'package:file_picker/file_picker.dart';
+import 'medicine_info_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -62,9 +63,23 @@ class _ImageTextExtractionState extends State<ImageTextExtraction> {
       );
 
       if (response.statusCode == 200) {
+        final Map<String, dynamic> responseData = json.decode(response.body);
+        String extractedText = responseData['extracted_text'];
+        List<List<dynamic>> dynamicTabList =
+            List<List<dynamic>>.from(responseData['tab_list']);
+        List<List<String>> tabList = dynamicTabList
+            .map<List<String>>((dynamic sublist) => sublist.cast<String>())
+            .toList();
         setState(() {
           // Handle the extracted text response if needed
-          print('Image Extracted: ${response.body}');
+          print('Image Extracted: $extractedText');
+          print('Tab List: $tabList');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MedicineInfoScreen(tabList: tabList),
+            ),
+          );
         });
       } else {
         throw Exception('Failed to extract text.');

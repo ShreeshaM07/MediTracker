@@ -5,6 +5,7 @@ import pytesseract
 import base64
 import io
 from database import get_database_connection,signup_new_account
+from identify_medicines import extract_Tablets
 
 app = Flask(__name__)
 
@@ -36,7 +37,13 @@ def extract_text():
         with open('extracted_text.txt', 'w') as text_file:
             text_file.write(extracted_text)
         
-        return jsonify({'extracted_text': extracted_text}), 200
+        tab_list=extract_Tablets(extracted_text)
+        response_data = {
+            'extracted_text': extracted_text,
+            'tab_list': tab_list
+        }
+        
+        return jsonify(response_data), 200
     except Exception as e:
         print(str(e))
         return jsonify({'error': 'Error occurred while processing the image'}), 500

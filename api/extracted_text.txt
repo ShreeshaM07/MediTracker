@@ -1,6 +1,6 @@
-Hospital Name
+Hospital Name |
 
-AFHJVN;BFOP;BGP;NGLJDFGLS;
+AFHJVN;BEOP;BGP;NGLJDFGLS;
 
 Phn:2389u4y0
 
@@ -14,21 +14,14 @@ Diagnosixifizhul
 
 Medication:
 
-Medicine name Dosage
+Medicine name Dosage Duration
 
-Duration
+Tab, ibuprofen ‘1 morning, 1 night (Before food) 3 days
 
-Tab, ibuprofen ‘1 morning, 1 night (Before food)
+Cap, ome, 1 morning. 1 night (before food) 3 days
 
-Cap, ome, 1. morning , 1 night (before food)
-
-Ointment Volini afternoon (after food)
+Ointment, Volini afternoon (after food) 2days
 
 Advice: take medicines on time
 
 Follow up: 12/01/22
-
-3 days
-3 days
-
-2 days
