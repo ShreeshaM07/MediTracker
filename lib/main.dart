@@ -82,34 +82,37 @@ class _ImageTextExtractionState extends State<ImageTextExtraction> {
         backgroundColor: const Color.fromARGB(255, 16, 185, 211),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 16, 185, 211),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const SizedBox(height: 60),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 16, 185, 211),
+                ),
+                onPressed: _selectImage,
+                child: Text('Select Image'),
               ),
-              onPressed: _selectImage,
-              child: Text('Select Image'),
-            ),
-            _selectedImage == null
-                ? Text('No image selected.')
-                : Image.file(
-                    _selectedImage!,
-                    height: 270,
-                    width: 480,
-                    fit: BoxFit.fill,
-                  ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 16, 185, 211),
+              _selectedImage == null
+                  ? Text('No image selected.')
+                  : Image.file(
+                      _selectedImage!,
+                      height: 480,
+                      width: 270,
+                      fit: BoxFit.fill,
+                    ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 16, 185, 211),
+                ),
+                onPressed: extractText,
+                child: Text('Extract Text'),
               ),
-              onPressed: extractText,
-              child: Text('Extract Text'),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
