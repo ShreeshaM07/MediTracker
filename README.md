@@ -31,17 +31,17 @@ test users google calendar.
 
 ## Installation
 
-install flutter and create a project and run `flutter doctor`.
-run `pub-get` in pubspec.yaml.
-`pip install flask`
-install mysql and create a database and link it with the `db_connection` in `database.py` file.
-Create a `google cloud console` account and add the app as a project.
-Complete the OAUTH consent and add test users or verify app when it is published.
-Enable google calendar api.
-Download the `json` file generated and modify it in the address in `cal_setup.py`.
-`pip install google-api-python-client`
-`pip install datetime`
-`pip install pytesseract`
+install flutter and create a project and run `flutter doctor`  
+run `pub-get` in pubspec.yaml.  
+`pip install flask`  
+install mysql and create a database and link it with the `db_connection` in `database.py` file.  
+Create a `google cloud console` account and add the app as a project.  
+Complete the OAUTH consent and add test users or verify app when it is published.  
+Enable google calendar api.  
+Download the `json` file generated and modify it in the address in `cal_setup.py`.  
+`pip install google-api-python-client`  
+`pip install datetime`  
+`pip install pytesseract`  
 
 ## NOTE
 
