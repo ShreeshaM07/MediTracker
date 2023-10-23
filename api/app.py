@@ -6,6 +6,7 @@ import base64
 import io
 from database import get_database_connection,signup_new_account
 from identify_medicines import extract_Tablets
+from medicines_to_calendar import add_event_to_calendar
 
 app = Flask(__name__)
 
@@ -47,6 +48,14 @@ def extract_text():
     except Exception as e:
         print(str(e))
         return jsonify({'error': 'Error occurred while processing the image'}), 500
+
+
+@app.route('/updatecalendar', methods=['POST'])
+def update_to_calendar():
+    editedTabList = request.get_json().get('editedTabList')
+    add_event_to_calendar(editedTabList)
+    return jsonify({'message': 'Data received successfully'}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)

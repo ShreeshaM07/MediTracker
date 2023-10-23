@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class MedicineInfoScreen extends StatefulWidget {
   final List<List<String>> tabList;
@@ -126,6 +128,26 @@ class _MedicineInfoScreenState extends State<MedicineInfoScreen> {
     });
   }
 
+  void _updateToCalendar() async {
+    try {
+      var response = await http.post(
+        Uri.parse('http://127.0.0.1:5000/updatecalendar'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({'editedTabList': editedTabList}),
+      );
+
+      if (response.statusCode == 200) {
+        print('Data sent to server successfully');
+      } else {
+        print('Failed to send data to server');
+      }
+    } catch (error) {
+      print('Error sending data to server: $error');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -170,6 +192,12 @@ class _MedicineInfoScreenState extends State<MedicineInfoScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: _addMedicine,
         child: Icon(Icons.add),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: ElevatedButton(
+          onPressed: _updateToCalendar,
+          child: Text('Update to Calendar'),
+        ),
       ),
     );
   }

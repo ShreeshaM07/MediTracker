@@ -61,8 +61,7 @@ def extract_Tablets(extracted_text):
     print(tablets_list)
     return tablets_list
 
-extracted_text="Hospital Name |\n\nAFHJVN;BFOP;BGP;NGLIDFGLS;\n\nPhn:2389u4y0\n\nPatient Name:ruipgthg\nAge:88\nsexim\nInvestigations: xray,dghibif\n\nDiagnosis:ifjighuj\n\nMedication:\n\nMedicine name Dosage\n\nDuration\nTab, ibuprofen \u20181 morning, 1 night (Before food) 3 days\nCap, omez \u2018L morning , 1 night (before food) 3 days\nOintment, Volini afternoon (after food) 2 days\n\nAdvice: take medicines on time\n\nFollow up: 12/01/22\n\nDname\n\njfapbgliabg\n"
-extract_Tablets(extracted_text)        
+      
     
 
 # Example usage
