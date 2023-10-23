@@ -65,5 +65,24 @@ def add_event_to_calendar(editedTabList):
             except Exception as e:
                 print(f'Error adding event to Google Calendar: {str(e)}')
                 return None
+    follow_up=editedTabList[len(editedTabList)-1][1]
+    dd=follow_up[:2]
+    mm=follow_up[3:5]
+    yyyy=follow_up[6:10]
+    start=yyyy+'-'+mm+'-'+dd
+    end=yyyy+'-'+mm+'-'+dd
+    event= service.events().insert(calendarId='primary',
+        body={
+        'summary':'Follow up',
+        'description':'Follow up with doctor',
+        "start": {"date": start, "timeZone": 'Asia/Kolkata'},
+        "end": {"date": end, "timeZone": 'Asia/Kolkata'},
+    }
+        
+    ).execute()
+    
+
+
+
     print('Added events successfully')
    
