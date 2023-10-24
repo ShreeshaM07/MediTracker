@@ -140,6 +140,12 @@ class _MedicineInfoScreenState extends State<MedicineInfoScreen> {
 
       if (response.statusCode == 200) {
         print('Data sent to server successfully');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+                'Medicine Information has been updated to the Google Calendar'),
+          ),
+        );
       } else {
         print('Failed to send data to server');
       }
