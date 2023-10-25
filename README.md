@@ -31,7 +31,7 @@ test users google calendar.
 
 ## Installation
 
-install flutter and create a project and run `flutter doctor`  
+install flutter and create a project and run `flutter doctor`    
 run `pub-get` in pubspec.yaml.  
 `pip install flask`  
 install mysql and create a database with name `meditracker_login`
@@ -50,20 +50,29 @@ add the Tesseract-OCR folder to the environment path variable on the system and 
 ## Step by Step Setup
  
 1.Install the medi_tracker.exe from `https://github.com/ShreeshaM07/MediTracker/tree/main/installers`  
-2.Setup the application to desktop as an app
-3.install mysql and create a database with name `meditracker_login`
-4.Create a table named `logindetails` with email and password columns
-5.link it with the `db_connection` in `database.py` file. 
-6.install Tesseract-OCR from `https://github.com/UB-Mannheim/tesseract/wiki`
+2.Setup the application to desktop as an app  
+3.install mysql and create a database with name `meditracker_login`  
+4.Create a table named `logindetails` with email and password columns  
+#### Note: go to `mysql` database and `flush privileges;`  
+5.link `meditracker_login` with the `db_connection` in `database.py` file.  
+6.install Tesseract-OCR from `https://github.com/UB-Mannheim/tesseract/wiki`  
 7.add the Tesseract-OCR folder to the environment path variable on the system and restart pc.  
-8.Execute the following pip commands:
-`pip install google-api-python-client`  
+
+![Screenshot (71)](https://github.com/ShreeshaM07/MediTracker/assets/120820143/c367c771-b3fc-4baa-b397-b1fa1436e6a5)
+
+![Screenshot (73)](https://github.com/ShreeshaM07/MediTracker/assets/120820143/b5098bd5-b7cc-4469-8963-bb315b5a591b)  
+
+![Screenshot (75)](https://github.com/ShreeshaM07/MediTracker/assets/120820143/5e04db35-8af6-4e83-a4bb-4471a7a2fe14)
+
+
+8.Execute the following pip commands:  
+`pip install google-api-python-client`   
 `pip install datetime`  
-`pip install pytesseract`
-`pip install flask` 
-9.`cd` to the api folder after forking the repo and `flask run` on CMD
-10.A request to allow app to access google calendar will pop up press `ALLOW`.
-11.Start the app by clicking on the icon created after `step 2`.
+`pip install pytesseract`  
+`pip install flask`  
+9.`cd` to the api folder after forking the repo and `flask run` on CMD  
+10.A request to allow app to access google calendar will pop up press `ALLOW`.  
+11.Start the app by clicking on the icon created after `step 2`.  
 
 ## NOTE
 
