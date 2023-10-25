@@ -49,5 +49,19 @@ To call the flask server to integrate python backend move to the directory where
 then `flask run` which will then take you to a google vefirication link which must be allowed in order to access the
 google calendat and create events in it. Then build the program by running the main.dart file.
 
+## Working Video
+
+### How to run the app
+
+https://github.com/ShreeshaM07/MediTracker/assets/120820143/8a268352-c1d0-4eb6-8a6a-552f02228e31
+
+### Select Image and Process
+
+
+https://github.com/ShreeshaM07/MediTracker/assets/120820143/4da3c2fe-824e-47c7-8a26-43030a1eb840
+
+### Output
+
+https://github.com/ShreeshaM07/MediTracker/assets/120820143/122c659d-e686-423f-b9bf-116003519534
 
 
