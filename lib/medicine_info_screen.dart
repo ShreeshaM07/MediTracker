@@ -148,6 +148,11 @@ class _MedicineInfoScreenState extends State<MedicineInfoScreen> {
         );
       } else {
         print('Failed to send data to server');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to send data to server'),
+          ),
+        );
       }
     } catch (error) {
       print('Error sending data to server: $error');

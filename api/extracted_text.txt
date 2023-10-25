@@ -1,22 +1,25 @@
-Hospital Name
+Hospital Name |
 
 AFHJVN;BFOP;BGP;NGLJDFGLS;
 
 Phn:2389u4y0
 
 Patient Namezwipgths
+
 Age:s8
+
 Sexson
+
 Investigations: xray,dghibif
+
 Diagnosixifizhul
+
 Medication:
-Medicine name Dosage Duration
+
+Medicine name Timings Duration
 Tab, gelusil, 1 night (after food) 2 days
-Tab, ibuprofen 1 morning, 1 night (Before food) 3 days
+Tab ibuprofen 1 morning, 1 night (Before food) 3 days
 Cap, omez, 1 morning. 1 night (before food) 3 days
 Ointment, Volini 1 afternoon (after food) 2 days
+
 Advice: take medicines on time
-Follow up: 28/10/2023
-
-Brame,
-

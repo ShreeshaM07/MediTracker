@@ -16,7 +16,7 @@ def extract_Tablets(extracted_text):
         try:
             word_in_sentence=list(sentences[i].split())
             #print(word_in_sentence)
-            if word_in_sentence[0]=='Tab,' or word_in_sentence[0]=='Cap,' or word_in_sentence[0]=='Ointment,' :
+            if word_in_sentence[0]=='Tab,' or word_in_sentence[0]=='Cap,' or word_in_sentence[0]=='Ointment,' or word_in_sentence[0]=='Syp,' or word_in_sentence[0]=='TAB' or word_in_sentence[0]=='Tab' or word_in_sentence[0]=='Cap' or word_in_sentence[0]=='CAP' or word_in_sentence[0]=='OINTMENT' or word_in_sentence[0]=='Cream,' or word_in_sentence[0]=='CREAM' or word_in_sentence[0]=='Tablet' or word_in_sentence[0]=='tablet'   :
                 tablets_list.append([sentences[i]])
 
         except Exception:
@@ -55,8 +55,10 @@ def extract_Tablets(extracted_text):
             len_days_string=len(tablets_list[i][0])
             no_days=tablets_list[i][0][len_days_string-6:len_days_string-4].strip()
             tablets_list[i].append(no_days)
-        
-    tablets_list.append(['Follow up date',follow_up_date])
+    if follow_up_date!=None:    
+        tablets_list.append(['Follow up date',follow_up_date])
+    else:
+        tablets_list.append(['Follow up date','01/01/2024'])
     print("Follow-up Date:", follow_up_date)
     print(tablets_list)
     return tablets_list
