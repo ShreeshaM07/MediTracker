@@ -58,11 +58,12 @@ add the Tesseract-OCR folder to the environment path variable on the system and 
 6.install Tesseract-OCR from `https://github.com/UB-Mannheim/tesseract/wiki`  
 7.add the Tesseract-OCR folder to the environment path variable on the system and restart pc.  
 
-![Screenshot (71)](https://github.com/ShreeshaM07/MediTracker/assets/120820143/c367c771-b3fc-4baa-b397-b1fa1436e6a5 | width=100)
+<img src="https://github.com/ShreeshaM07/MediTracker/assets/120820143/c367c771-b3fc-4baa-b397-b1fa1436e6a5"  width="60%" height="30%">
 
-![Screenshot (73)](https://github.com/ShreeshaM07/MediTracker/assets/120820143/b5098bd5-b7cc-4469-8963-bb315b5a591b | width=100)  
+<img src="https://github.com/ShreeshaM07/MediTracker/assets/120820143/b5098bd5-b7cc-4469-8963-bb315b5a591b"  width="60%" height="30%">
 
-![Screenshot (75)](https://github.com/ShreeshaM07/MediTracker/assets/120820143/5e04db35-8af6-4e83-a4bb-4471a7a2fe14 | width=100)
+<img src="https://github.com/ShreeshaM07/MediTracker/assets/120820143/5e04db35-8af6-4e83-a4bb-4471a7a2fe14"  width="60%" height="30%">
+
 
 
 8.Execute the following pip commands:  
