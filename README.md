@@ -31,17 +31,49 @@ test users google calendar.
 
 ## Installation
 
-install flutter and create a project and run `flutter doctor`  
+install flutter and create a project and run `flutter doctor`    
 run `pub-get` in pubspec.yaml.  
 `pip install flask`  
-install mysql and create a database and link it with the `db_connection` in `database.py` file.  
+install mysql and create a database with name `meditracker_login`
+Create a table named `logindetails` with email and password columns
+and link it with the `db_connection` in `database.py` file.  
 Create a `google cloud console` account and add the app as a project.  
 Complete the OAUTH consent and add test users or verify app when it is published.  
 Enable google calendar api.  
 Download the `json` file generated and modify it in the address in `cal_setup.py`.  
 `pip install google-api-python-client`  
 `pip install datetime`  
+`pip install pytesseract`
+install Tesseract-OCR from `https://github.com/UB-Mannheim/tesseract/wiki`
+add the Tesseract-OCR folder to the environment path variable on the system and restart pc.  
+
+## Step by Step Setup
+ 
+1.Install the medi_tracker.exe from `https://github.com/ShreeshaM07/MediTracker/tree/main/installers`  
+2.Setup the application to desktop as an app  
+3.install mysql and create a database with name `meditracker_login`  
+4.Create a table named `logindetails` with email and password columns  
+#### Note: go to `mysql` database and `flush privileges;`  
+5.link `meditracker_login` with the `db_connection` in `database.py` file.  
+6.install Tesseract-OCR from `https://github.com/UB-Mannheim/tesseract/wiki`  
+7.add the Tesseract-OCR folder to the environment path variable on the system and restart pc.  
+
+<img src="https://github.com/ShreeshaM07/MediTracker/assets/120820143/c367c771-b3fc-4baa-b397-b1fa1436e6a5"  width="60%" height="30%">
+
+<img src="https://github.com/ShreeshaM07/MediTracker/assets/120820143/b5098bd5-b7cc-4469-8963-bb315b5a591b"  width="60%" height="30%">
+
+<img src="https://github.com/ShreeshaM07/MediTracker/assets/120820143/5e04db35-8af6-4e83-a4bb-4471a7a2fe14"  width="60%" height="30%">
+
+
+
+8.Execute the following pip commands:  
+`pip install google-api-python-client`   
+`pip install datetime`  
 `pip install pytesseract`  
+`pip install flask`  
+9.`cd` to the api folder after forking the repo and `flask run` on CMD  
+10.A request to allow app to access google calendar will pop up press `ALLOW`.  
+11.Start the app by clicking on the icon created after `step 2`.  
 
 ## NOTE
 
